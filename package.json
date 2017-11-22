@@ -1,0 +1,16 @@
+{
+  "name": "parse-error-plus",
+  "version": "0.0.1",
+  "description": "Augmentation of parse.error in order to add more information to logs. It is basically a shim that makes Parse.Error a subclass of native Error",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "tsc"
+  },
+  "author": "Saulo Tauil <saulogt@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^2.6.1"
+  }
+}
