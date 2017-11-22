@@ -2,7 +2,7 @@ This module adds the stack trace to Parse.Error objects and makes it an instance
 Tested on NodeJs
 
 ## Install
-npm i parse-error-plus --save
+`npm i parse-error-plus --save`
 
 ## Usage
 ### ES6 or Typescript
