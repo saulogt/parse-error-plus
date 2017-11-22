@@ -17,7 +17,7 @@ export function setupParseError(parse) {
 declare global {
   export namespace Parse {
     interface Error {
-      stack: string;
+      stack?: string;
     }
   }
 }
