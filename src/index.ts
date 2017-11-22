@@ -1,6 +1,11 @@
 
 export function setupParseError(parse) {
   const oldError = parse.Error
+
+  if (oldError.prototype.__proto__ === Error.prototype) {// Already converted
+    return
+  }
+
   function ParseError(code: number, message: string){
     (Error as any).captureStackTrace(this)
     oldError.call(this, code, message)
