@@ -12,6 +12,10 @@ export function setupParseError(parse) {
     this.code = code;
   }
 
+  for (let key in oldError) {
+    ParseError[key] = oldError[key]
+  }
+
   oldError.prototype.__proto__ = Error.prototype
   ParseError.prototype = oldError.prototype
 

@@ -4,7 +4,7 @@
     "url": "git+https://github.com/saulogt/parse-error-plus.git",
     "type": "git"
   },
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Augmentation of parse.error in order to add more information to logs. It is basically a shim that makes Parse.Error a subclass of native Error",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
