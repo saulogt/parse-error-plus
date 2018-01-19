@@ -1,5 +1,7 @@
 
-export function setupParseError(parse) {
+export type ParseErrorPlusDecoder = (code: number, message: string) => [number, string, string | undefined];
+
+export function setupParseError(parse, decoder?: ParseErrorPlusDecoder) {
   const oldError = parse.Error
 
   if (oldError.prototype.__proto__ === Error.prototype) {// Already converted
@@ -7,7 +9,15 @@ export function setupParseError(parse) {
   }
 
   function ParseError(code: number, message: string){
-    (Error as any).captureStackTrace(this)
+    let stack;
+    [code, message, stack] = decoder ? decoder(code, message) : [code, message, undefined];
+    
+    if (stack) {
+      this.stack = stack
+    } else {
+      (Error as any).captureStackTrace(this)
+    }
+    
     oldError.call(this, code, message)
     this.code = code;
   }
