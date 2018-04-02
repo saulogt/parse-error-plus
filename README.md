@@ -1,3 +1,4 @@
+I really don't understand why Parse.Error is not a subclass of native Error.
 This module adds the stack trace to Parse.Error objects and makes it an instance of native Error as well.
 Tested on NodeJs
 
